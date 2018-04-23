@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:gauge="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="net.ucoz.lexxx3.speedtaxo.MainActivity"
+    tools:layout_editor_absoluteY="89dp">
+
+
+    <TextView
+        android:id="@+id/textView"
+
+        android:layout_width="253dp"
+        android:layout_height="350dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:background="#0a0a0a"
+        android:text="Внутри 22.43c Снаружи 10.27с                           14.34v"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toEndOf="@+id/gaugeSpeed"
+        app:layout_constraintTop_toBottomOf="@+id/gaugeFuel" />
+
+    <de.nitri.gauge.Gauge
+
+        android:id="@+id/gaugeTaxo"
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="50dp"
+
+        app:intScale="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        gauge:faceColor="@color/Black"
+        gauge:lowerText="x1000"
+        gauge:majorNickInterval="10"
+        gauge:maxValue="8"
+        gauge:minValue="0"
+        gauge:needleColor="@color/Red"
+        gauge:scaleColor="@color/S"
+        gauge:totalNicks="100"
+        gauge:upperText="Rpm"
+        gauge:valuePerNick="0.1"
+        />
+
+    <de.nitri.gauge.Gauge
+        android:id="@+id/gaugeSpeed"
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        gauge:faceColor="@color/Black"
+        gauge:lowerText="Km/h"
+        gauge:majorNickInterval="10"
+        gauge:maxValue="240"
+        gauge:minValue="0"
+        gauge:needleColor="@color/Red"
+        gauge:needleShadow="true"
+        gauge:scaleColor="@color/S"
+        gauge:totalNicks="140"
+        gauge:upperText="Speed"
+        gauge:valuePerNick="2"
+        tools:ignore="MissingConstraints"
+
+        />
+
+    <de.nitri.gauge.Gauge
+        android:id="@+id/gaugeFuel"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="420dp"
+        android:layout_marginStart="420dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        gauge:faceColor="@color/Black"
+        gauge:lowerText=""
+        gauge:majorNickInterval="15"
+        gauge:maxValue="60"
+        gauge:minValue="0"
+        gauge:needleColor="@color/Red"
+        gauge:scaleColor="@color/S"
+        gauge:totalNicks="120"
+        gauge:upperText="Fuel"
+        gauge:valuePerNick="1" />
+
+    <de.nitri.gauge.Gauge
+        android:id="@+id/gaugeTemp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="436dp"
+
+        android:layout_marginRight="436dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        gauge:faceColor="@color/Black"
+        gauge:lowerText=""
+        gauge:majorNickInterval="20"
+        gauge:maxValue="120"
+        gauge:minValue="0"
+        gauge:needleColor="@color/Red"
+        gauge:scaleColor="@color/S"
+        gauge:totalNicks="240"
+        gauge:upperText="Temp."
+        gauge:valuePerNick="1" />
+
+
+    <ImageView
+        android:id="@+id/Brake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:src="@drawable/brake"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/OilVarning" />
+
+    <ImageView
+        android:id="@+id/turnLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/turnleft"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/gaugeFuel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/turnRight"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/turnright"
+        app:layout_constraintStart_toEndOf="@+id/gaugeTemp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewTurn"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/turn"
+        app:layout_constraintEnd_toEndOf="@+id/gaugeTemp"
+        app:layout_constraintStart_toStartOf="@+id/gaugeFuel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/FuelLamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/lowfuel"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/gaugeFuel"
+        app:layout_constraintEnd_toEndOf="@+id/gaugeFuel"
+        app:layout_constraintStart_toStartOf="@+id/gaugeFuel" />
+
+    <ImageView
+        android:id="@+id/TempLamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/temperature"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/gaugeTemp"
+        app:layout_constraintEnd_toEndOf="@+id/gaugeTemp"
+        app:layout_constraintStart_toStartOf="@+id/gaugeTemp" />
+
+    <ImageView
+        android:id="@+id/Varning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:src="@drawable/braketroublea"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/OilVarning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:src="@drawable/oiltroubleindicator"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Varning" />
+
+    <ImageView
+        android:id="@+id/Check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="240dp"
+        android:src="@drawable/check2"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/Winter"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/Hight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="140dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="240dp"
+        android:src="@drawable/highbeam"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/FogR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/foglamp1"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/Light"
+        app:layout_constraintTop_toBottomOf="@+id/FogF" />
+
+    <ImageView
+        android:id="@+id/FogF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="240dp"
+        android:src="@drawable/rearfoglampl"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/Hight"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/Winter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/frostwarning"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="1075dp"
+        tools:layout_editor_absoluteY="240dp" />
+
+    <ImageView
+        android:id="@+id/Light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="140dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/light"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Hight" />
+
+    <ImageView
+        android:id="@+id/Charge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:src="@drawable/charge"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Brake" />
+
+    <ImageView
+        android:id="@+id/AtOilTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:src="@drawable/transmissiontemperature"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Charge" />
+
+    <ImageView
+        android:id="@+id/Cruise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="140dp"
+        android:layout_marginRight="140dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/cruise"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Winter" />
+
+    <ImageView
+        android:id="@+id/DoorOpen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/doorajar"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/Cruise"
+        app:layout_constraintTop_toBottomOf="@+id/Check" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginRight="96dp"
+        android:src="@drawable/airbag"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+</android.support.constraint.ConstraintLayout>
